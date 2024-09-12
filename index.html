@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Cyber Security Toolkit</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+</head>
+<body>
+    <div class="container">
+        <nav id="sidebar">
+            <h2>Tools</h2>
+            <ul>
+                <li><a href="#passwordGenerator"><i class="fas fa-key"></i> Password Generator</a></li>
+                <li><a href="#ipLookup"><i class="fas fa-search-location"></i> IP Lookup</a></li>
+                <li><a href="#geoIP"><i class="fas fa-map-marked-alt"></i> IP Geolocation</a></li>
+                <li><a href="#portScan"><i class="fas fa-network-wired"></i> Port Scan</a></li>
+                <li><a href="#hashGenerator"><i class="fas fa-fingerprint"></i> Hash Generator</a></li>
+                <li><a href="#pingTest"><i class="fas fa-bullseye"></i> Ping Test</a></li>
+                <li><a href="#dnsLookup"><i class="fas fa-server"></i> DNS Lookup</a></li>
+                <li><a href="#traceroute"><i class="fas fa-route"></i> Traceroute</a></li>
+            </ul>
+        </nav>
+
+        <main id="content">
+            <header>
+                <h1>Advanced Cyber Security Toolkit</h1>
+            </header>
+
+            <section id="passwordGenerator" class="tool">
+                <h2>Password Generator</h2>
+                <button onclick="generatePassword()">Generate Password</button>
+                <p id="passwordOutput"></p>
+                <button id="copyPassword">Copy</button>
+            </section>
+
+            <section id="ipLookup" class="tool">
+                <h2>IP Lookup</h2>
+                <input type="text" id="ipInput" placeholder="Enter IP">
+                <button onclick="lookupIP()">Lookup</button>
+                <pre id="ipDetails"></pre>
+            </section>
+
+            <section id="geoIP" class="tool">
+                <h2>IP Geolocation</h2>
+                <input type="text" id="geoIPInput" placeholder="Enter IP">
+                <button onclick="getGeolocation()">Get Geolocation</button>
+                <div id="map"></div>
+            </section>
+
+            <section id="portScan" class="tool">
+                <h2>Port Scan</h2>
+                <input type="text" id="scanIP" placeholder="Enter IP for Port Scan">
+                <button onclick="scanPorts()">Scan Ports</button>
+                <pre id="portDetails"></pre>
+            </section>
+
+            <section id="hashGenerator" class="tool">
+                <h2>Hash Generator</h2>
+                <textarea id="textToHash" placeholder="Enter text to hash"></textarea>
+                <button onclick="generateHash('md5')">Generate MD5</button>
+                <button onclick="generateHash('sha256')">Generate SHA-256</button>
+                <pre id="hashOutput"></pre>
+            </section>
+
+            <section id="pingTest" class="tool">
+                <h2>Ping Test</h2>
+                <input type="text" id="pingIP" placeholder="Enter IP to ping">
+                <button onclick="pingIP()">Ping</button>
+                <pre id="pingResults"></pre>
+            </section>
+
+            <section id="dnsLookup" class="tool">
+                <h2>DNS Lookup</h2>
+                <input type="text" id="dnsDomain" placeholder="Enter domain">
+                <button onclick="dnsLookup()">Lookup DNS</button>
+                <pre id="dnsDetails"></pre>
+            </section>
+
+            <section id="traceroute" class="tool">
+                <h2>Traceroute</h2>
+                <input type="text" id="tracerouteIP" placeholder="Enter IP to traceroute">
+                <button onclick="traceroute()">Traceroute</button>
+                <pre id="tracerouteResults"></pre>
+            </section>
+        </main>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
